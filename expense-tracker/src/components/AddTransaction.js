@@ -22,30 +22,29 @@ export const AddTransaction = () => {
 
 	return (
 		<>
-			<h3>Add new transaction</h3>
 			<form onSubmit={onSubmit}>
 				<div className='form-control'>
-					<label htmlFor='text'>Text</label>
+					<label htmlFor='text'>Transaction Name</label>
 					<input
 						type='text'
 						value={text}
 						onChange={e => setText(e.target.value)}
-						placeholder='Enter text...'
+						placeholder='Enter Transaction Name..'
+						required
 					/>
 				</div>
 				<div className='form-control'>
 					<label ftmlFor='amount'>
 						Amount <br />
-						(negative - expense, positive - income)
 					</label>
 					<input
 						type='number'
 						value={amount}
 						onChange={e => setAmount(e.target.value)}
-						placeholder='Enter amount...'
+						placeholder='Enter Amount..'
 					/>
 				</div>
-				<button className='btn'>Add transaction</button>
+				<button className='btn'>ADD TRANSACTION</button>
 			</form>
 		</>
 	);
