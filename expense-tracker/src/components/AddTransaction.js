@@ -4,6 +4,7 @@ import { GlobalContext } from '../context/GlobalState';
 export const AddTransaction = () => {
 	const [text, setText] = useState('');
 	const [amount, setAmount] = useState(0);
+	const [expense, setExpense] = useState(false);
 
 	const { addTransaction } = useContext(GlobalContext);
 
@@ -20,6 +21,10 @@ export const AddTransaction = () => {
 		addTransaction(newTransaction);
 	};
 
+	// function clickExpense() {
+	// 	return -Math.abs(amount);
+	// }
+
 	return (
 		<>
 			<form onSubmit={onSubmit}>
@@ -29,7 +34,7 @@ export const AddTransaction = () => {
 						type='text'
 						value={text}
 						onChange={e => setText(e.target.value)}
-						placeholder='Enter Transaction Name..'
+						placeholder=''
 						required
 					/>
 				</div>
@@ -45,6 +50,9 @@ export const AddTransaction = () => {
 					/>
 				</div>
 				<button className='btn'>ADD TRANSACTION</button>
+				{/* <div onClick={clickExpense} className='exp'>
+					ADD
+				</div> */}
 			</form>
 		</>
 	);
